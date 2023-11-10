@@ -1,0 +1,27 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        @if (item.isActive && item.isHome)
+        {
+            <div class="col-3">
+                <div class="card d-flex">
+                    <img src="~/img/@item.Image" class="card-img-top" style="height:400px">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @item.ProductName
+                        </h5>
+                        <p class="card-text">@item.Description</p>
+                        <a class="btn btn-primary" asp-controller="Product" asp-action="Details" asp-route-id="@item.Id">Detay</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+

@@ -1,0 +1,42 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row mb-1">
+    <div class="col-12">
+        <div class="card text-center">
+            <h2 class="card-title">@Model.ProductName</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <img src="~/img/@Model.Image" style="height:auto" class="card-img-top">
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text fw-bold"> Açıklma: @Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center p-3 fw-bold">
+            <!-- p-3 adds padding to the card body -->
+            <h6 class="card mb-2">Fiyat:@Model.Price</h6>
+            <!-- mb-2 adds margin-bottom to the card title -->
+            <h6 class="card mb-2">Garaj Sayısı:@Model.GarageCount</h6>
+            <h6 class="card">Oda Sayısı:@Model.RoomCount</h6>
+        
+    </div>
+</div>
+
+
+
